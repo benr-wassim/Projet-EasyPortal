@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet BTS</title>
+
+    <!-- Ajout de la feuille de style Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div id="entete">
+        <ul class="nav nav-tabs">
+
+            <img src="../connexion/images/Logo_EasyPortal.png" width="80" height="80">
+            <ul class="nav-item">
+                <a class="nav-link" id="tab3" data-bs-toggle="tab" href="../dashboard/index.html">DashBoard</a>
+            </ul>
+            <ul class="nav-item">
+                <a class="nav-link active" id="tab2" data-bs-toggle="tab" href="../presentation/présentation.html">Présentation</a>
+            </ul>
+            <ul class="nav-item">
+                <a class="nav-link" id="tab1" data-bs-toggle="tab" href="../diagramme/diagramme.html">Diagramme</a>
+            </ul>
+            <ul class="nav-item" id="search-container">
+                <input type="search" id="site-search" name="q" class="form-control">
+                <button onclick="search()" class="btn btn-primary">Search</button>
+            </ul>
+            
+        </ul>
+    </div>
+    <div class="connexion container">
+
+        <h1 class="text-center">Connexion Administrateur</h1>
+
+        <!-- Formulaire de connexion avec Bootstrap -->
+        <form action="login.php" method="post">
+            <div class="form-group">
+                <label for="username">Nom d'utilisateur :</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="password">Mot de passe :</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Se connecter</button>
+        </form>
+    </div>
+
+    <!-- Ajout du script Bootstrap (jQuery et Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Ajout du script JavaScript pour la recherche -->
+    <script>
+        function search() {
+            var searchTerm = document.getElementById('site-search').value.toLowerCase();
+            // Logique de recherche ici...
+        }
+    </script>
+
+</body>
+
+</html>

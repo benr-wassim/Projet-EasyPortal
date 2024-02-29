@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Administrateur</title>
+</head>
+<body>
+    <div id="entete">
+        <ul class="nav nav-tabs">
+
+            <img src="../connexion/images/Logo_EasyPortal.png" width="80" height="80">
+            <ul class="nav-item">
+                <a class="nav-link" id="tab3" data-bs-toggle="tab" href="../dashboard/index.html">DashBoard</a>
+            </ul>
+            <ul class="nav-item">
+                <a class="nav-link active" id="tab2" data-bs-toggle="tab" href="../presentation/présentation.html">Présentation</a>
+            </ul>
+            <ul class="nav-item">
+                <a class="nav-link" id="tab1" data-bs-toggle="tab" href="../diagramme/diagramme.html">Diagramme</a>
+            </ul>
+            <ul class="nav-item" id="search-container">
+                <input type="search" id="site-search" name="q" class="form-control">
+                <button onclick="search()" class="btn btn-primary">Search</button>
+            </ul>
+            
+        </ul>
+    </div>
+
+    <h1>DashBoard Administrateur</h1>
+    <div id="ajout_plaque">
+        <h2>Ajoutez une plaque </h2>
+        <form action="ajouter.php" method="post">
+            <div>
+                <label for="username">Nom d'utilisateur :</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="plaque">Plaque d'immatriculation n°1:</label>
+                <input type="text" id="plaque" name="plaque" required>
+            </div>
+            <div>
+                <label for="plaque2">Plaque d'immatriculation n°2:</label>
+                <input type="text" id="plaque2" name="plaque2" >
+            </div>
+            <button type="submit">Ajouter</button>
+        </form>
+    </div>
+    <div id="suppression_plaque">
+        <h2>Supprimer une plaque </h2>
+        <form action="suppression.php" method="post">
+            <div>
+                <label for="plaque">Plaque d'immatriculation :</label>
+                <input type="text" id="plaque" name="plaque" required>
+            </div>
+            <button type="submit">Supprimer</button>
+        </form>
+    </div>
+
+    <div id="tableau_plaque">
+        <iframe src="tableau.php" frameborder="0"></iframe>
+    </div>
+    
+    <div id="blacklist_plaque">
+        <h2>Blacklist une plaque </h2>
+        <form action="blacklist.php" method="post">
+            <div>
+                <label for="plaque">Plaque d'immatriculation :</label>
+                <input type="text" id="plaque" name="plaque" required>
+            </div>
+            <button type="submit">Blacklister</button>
+        </form>
+    </div>
+
+</body>
+</html>
