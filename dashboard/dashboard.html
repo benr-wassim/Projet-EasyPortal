@@ -75,5 +75,13 @@
         <iframe src="tableau_blacklist.php" frameborder="0"></iframe>
     </div>
 
+    <form action="extraction.php" method="post">
+        <p> Cliquez ici pour exporter les plaques autorisé au format CSV</p><button type="submit">Exporter </button>
+    </form>
+
+    <form action="importation.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="fileToImport" accept=".csv" required>
+        <button type="submit">Importer le fichier CSV</button>
+    </form>
 </body>
 </html>
