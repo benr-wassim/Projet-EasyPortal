@@ -66,7 +66,7 @@
         <form action="blacklist.php" method="post">
             <div>
                 <label for="plaque">Plaque d'immatriculation :</label>
-                <input type="text" id="plaque" name="plaque" required>
+                <input type="text" id="plaque" name="plaque" required> 
             </div>
             <button type="submit">Blacklister</button>
         </form>
@@ -75,10 +75,12 @@
         <iframe src="tableau_blacklist.php" frameborder="0"></iframe>
     </div>
 
+    <h2>Exporter un Fichier CSV </h2>
     <form action="extraction.php" method="post">
         <p> Cliquez ici pour exporter les plaques autorisé au format CSV</p><button type="submit">Exporter </button>
     </form>
 
+    <h2>Exporter un fichier CSV</h2> 
     <form action="importation.php" method="post" enctype="multipart/form-data">
         <input type="file" name="fileToImport" accept=".csv" required>
         <button type="submit">Importer le fichier CSV</button>
