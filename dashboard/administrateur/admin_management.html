@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Administrateurs</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <h1>Gestion des Administrateurs</h1>
+
+    <!-- Formulaire pour créer un nouvel administrateur -->
+    <h2>Créer un nouvel administrateur</h2>
+    <form id="createAdminForm" action="admin_management.php" method="post">
+        <label for="newUsername">Nom d'utilisateur :</label>
+        <input type="text" id="newUsername" name="newUsername" required>
+        <button type="submit" name="createAdmin">Créer</button>
+    </form>
+
+    <!-- Formulaire pour supprimer un administrateur -->
+    <h2>Supprimer un administrateur</h2>
+    <form id="deleteAdminForm" action="admin_management.php" method="post">
+        <label for="adminToDelete">Sélectionnez l'administrateur à supprimer :</label>
+        <select id="adminToDelete" name="adminToDelete" required>
+            <!-- Options seront ajoutées dynamiquement via JavaScript -->
+        </select>
+        <button type="submit" name="deleteAdmin">Supprimer</button>
+    </form>
+
+    <!-- Affichage des messages de succès ou d'erreur -->
+    <div id="message"></div>
+
+    <script src="admin_management.js"></script>
+</body>
+</html>
