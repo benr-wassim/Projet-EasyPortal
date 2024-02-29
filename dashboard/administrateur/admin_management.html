@@ -12,10 +12,29 @@
 
     <!-- Formulaire pour créer un nouvel administrateur -->
     <h2>Créer un nouvel administrateur</h2>
-    <form id="createAdminForm" action="admin_management.php" method="post">
-        <label for="newUsername">Nom d'utilisateur :</label>
-        <input type="text" id="newUsername" name="newUsername" required>
-        <button type="submit" name="createAdmin">Créer</button>
+    <form action="admin_management.php" method="post">
+        <div>
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required>
+        </div>
+        <div>
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" required>
+        </div>
+        <div>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Mots de passe :</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <button type="submit">S'inscrire</button>
     </form>
 
     <!-- Formulaire pour supprimer un administrateur -->

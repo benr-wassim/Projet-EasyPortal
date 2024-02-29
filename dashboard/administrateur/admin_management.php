@@ -1,23 +1,36 @@
 <?php
-// Vérifie si la requête est POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Vérifie si le formulaire de création d'administrateur est soumis
-    if (isset($_POST["createAdmin"])) {
-        // Récupère le nouveau nom d'utilisateur
-        $newUsername = $_POST["newUsername"];
-        // Effectue les opérations nécessaires pour créer un nouvel administrateur
-        // (par exemple, insertion dans la base de données)
-        // Ici, vous devez ajouter votre propre logique de création d'administrateur
-        echo "Nouvel administrateur créé : " . $newUsername;
-    }
-    // Vérifie si le formulaire de suppression d'administrateur est soumis
-    elseif (isset($_POST["deleteAdmin"])) {
-        // Récupère l'administrateur à supprimer
-        $adminToDelete = $_POST["adminToDelete"];
-        // Effectue les opérations nécessaires pour supprimer l'administrateur
-        // (par exemple, suppression dans la base de données)
-        // Ici, vous devez ajouter votre propre logique de suppression d'administrateur
-        echo "Administrateur supprimé : " . $adminToDelete;
-    }
+// Connexion à la base de données
+$serveur = "localhost";
+$utilisateur = "root";
+$motdepasse = "root";
+$base_de_donnees = "EasyPortal";
+
+$connexion = new mysqli($serveur, $utilisateur, $motdepasse, $base_de_donnees);
+
+// Vérification de la connexion
+if ($connexion->connect_error) {
+    die("La connexion à la base de données a échoué : " . $connexion->connect_error);
 }
+
+// Récupération des données du formulaire
+$nom = $_POST['nom'];
+$prenom = $_POST['prenom'];
+$email = $_POST['email'];
+$username = $_POST['username'];
+$password = $_POST['password']; // Ne pas oublier de hasher le mot de passe avant de l'enregistrer dans la base de données
+
+// Hashage du mot de passe (recommandé pour des raisons de sécurité)
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+// Requête SQL pour insérer les données dans la base de données
+$sql = "INSERT INTO connexion_admin (nom, prenom, email, username, password_hash) VALUES ('$nom', '$prenom', '$email', '$username', '$password')";
+
+if ($connexion->query($sql) === TRUE) {
+    echo "Inscription réussie.";
+} else {
+    echo "Erreur lors de l'inscription : " . $connexion->error;
+}
+
+// Fermeture de la connexion
+$connexion->close();
 ?>
