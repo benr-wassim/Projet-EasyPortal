@@ -13,7 +13,7 @@ if ($connexion->connect_error) {
 }
 
 // Requête pour récupérer toutes les données de la table
-$requete = "SELECT * FROM plaque";
+$requete = "SELECT * FROM Blacklist";
 
 // Exécution de la requête
 $resultat = $connexion->query($requete);
@@ -21,7 +21,7 @@ $resultat = $connexion->query($requete);
 // Vérification s'il y a des résultats
 if ($resultat->num_rows > 0) {
     // Création du fichier CSV et écriture des données
-    $fichier_csv = fopen('whitelist-plaque.csv', 'w');
+    $fichier_csv = fopen('Blacklist-plaque.csv', 'w');
 
     // Écriture de l'en-tête CSV avec le nom des colonnes de la table
     $entete = array();

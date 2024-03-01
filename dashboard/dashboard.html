@@ -75,12 +75,17 @@
         <iframe src="tableau_blacklist.php" frameborder="0"></iframe>
     </div>
 
-    <h2>Exporter un Fichier CSV </h2>
+    <h2>Exporter un Fichier CSV des plaques autorisé</h2>
     <form action="extraction.php" method="post">
         <p> Cliquez ici pour exporter les plaques autorisé au format CSV</p><button type="submit">Exporter </button>
     </form>
 
-    <h2>Exporter un fichier CSV</h2> 
+    <h2>Exporter un Fichier CSV des plaques non autorisé</h2>
+    <form action="extraction_bl.php" method="post">
+        <p> Cliquez ici pour exporter les plaques autorisé au format CSV</p><button type="submit">Exporter </button>
+    </form>
+
+    <h2>Importer un fichier CSV</h2> 
     <form action="importation.php" method="post" enctype="multipart/form-data">
         <input type="file" name="fileToImport" accept=".csv" required>
         <button type="submit">Importer le fichier CSV</button>
@@ -88,8 +93,8 @@
 
     <h2>Afficher Table SQL</h2>
     <button id="afficherTableBtn">Afficher la Table</button>
+    <button id="masquerLogsBtn">Masquer les Logs</button>
     <div id="tableContainer">
-
     </div>
     <script src="afficher_table.js"></script>
 
