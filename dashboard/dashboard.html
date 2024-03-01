@@ -28,6 +28,12 @@
     </div>
 
     <h1>DashBoard Administrateur</h1>
+    
+    <div id="tableau_plaque">
+        <h2>Tableau des plaques</h2>
+        <iframe src="tableau.php" frameborder="0"></iframe>
+    </div>
+
     <div id="ajout_plaque">
         <h2>Ajoutez une plaque </h2>
         <form action="ajouter.php" method="post">
@@ -57,20 +63,29 @@
         </form>
     </div>
 
-    <div id="tableau_plaque">
-        <iframe src="tableau.php" frameborder="0"></iframe>
-    </div>
+
+    
     
     <div id="blacklist_plaque">
         <h2>Blacklist une plaque </h2>
-        <form action="blacklist.php" method="post">
+        <form id="blacklistForm" action="blacklist.php" method="post">
             <div>
                 <label for="plaque">Plaque d'immatriculation :</label>
                 <input type="text" id="plaque" name="plaque" required> 
             </div>
             <button type="submit">Blacklister</button>
         </form>
+        <form id="whitelistForm">
+            <div>
+                <label for="plaque">Plaque d'immatriculation :</label>
+                <input type="text" id="plaqueWhitelist" name="plaque" required> 
+            </div>
+            <button id="retirerBlacklistBtn" type="button">Retirer de la Blacklist</button>
+        </form>
     </div>
+
+    <script src="scripts.js"></script>
+
     <div id="tableau_blacklist">
         <iframe src="tableau_blacklist.php" frameborder="0"></iframe>
     </div>
@@ -91,12 +106,20 @@
         <button type="submit">Importer le fichier CSV</button>
     </form>
 
-    <h2>Afficher Table SQL</h2>
+    <h2>Afficher Logs</h2>
     <button id="afficherTableBtn">Afficher la Table</button>
     <button id="masquerLogsBtn">Masquer les Logs</button>
     <div id="tableContainer">
     </div>
     <script src="afficher_table.js"></script>
 
+    <div id="Portail">
+        <h2>Ouvrir le portail à distance</h2>
+        <button id="ouverture_portail">Ouvrir le portail</button>
+    </div>
+    <div id="administrateur">
+        <h2>Gérer les comptes administrateurs</h2>
+       <button onclick="window.location.href = '../dashboard/administrateur/gerer_admin.html';">Gerer les comptes administrateurs</button>
+    </div>
 </body>
 </html>

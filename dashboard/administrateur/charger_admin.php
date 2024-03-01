@@ -18,7 +18,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // Création du tableau HTML pour afficher les données
-    echo "<table border='1'>";
+    echo "<table border='10'>";
     echo "<tr><th>Username</th><th>Password Hash</th><th>Nom</th><th>Prénom</th><th>Email</th></tr>";
     while($row = $result->fetch_assoc()) {
         echo "<tr>";

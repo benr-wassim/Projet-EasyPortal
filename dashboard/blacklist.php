@@ -22,7 +22,7 @@ if(isset($_POST['plaque'])) {
 
     // Exécution de la requête
     if ($connexion->query($requete_insertion) === TRUE) {
-        echo "La plaque a été ajoutée à la liste noire avec succès.";
+        header("Location: ../dashboard/dashboard.html");
     } else {
         echo "Erreur lors de l'ajout de la plaque à la liste noire : " . $connexion->error;
     }
