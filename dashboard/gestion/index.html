@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des plaques</title>
+</head>
+<body>
+
+<div id="tableau_plaque">
+    <h2>Tableau des plaques</h2>
+    <iframe src="tableau.php" frameborder="0"></iframe>
+</div>
+
+<div id="ajout_plaque">
+    <h2>Ajoutez une plaque</h2>
+    <form action="ajouter.php" method="post">
+        <div>
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="plaque">Plaque d'immatriculation n°1:</label>
+            <input type="text" id="plaque" name="plaque" required>
+        </div>
+        <div>
+            <label for="plaque2">Plaque d'immatriculation n°2:</label>
+            <input type="text" id="plaque2" name="plaque2">
+        </div>
+        <button type="submit">Ajouter</button>
+    </form>
+</div>
+
+<div id="suppression_plaque">
+    <h2>Supprimer une plaque</h2>
+    <form action="suppression.php" method="post">
+        <div>
+            <label for="plaque">Plaque d'immatriculation :</label>
+            <input type="text" id="plaque" name="plaque" required>
+        </div>
+        <button type="submit">Supprimer</button>
+    </form>
+</div>
+
+<div id="blacklist_plaque">
+    <h2>Blacklist une plaque</h2>
+    <form id="blacklistForm" action="blacklist.php" method="post">
+        <div>
+            <label for="plaque">Plaque d'immatriculation :</label>
+            <input type="text" id="plaque" name="plaque" required>
+        </div>
+        <button type="submit">Blacklister</button>
+    </form>
+    <form id="whitelistForm">
+        <div>
+            <label for="plaque">Plaque d'immatriculation :</label>
+            <input type="text" id="plaqueWhitelist" name="plaque" required>
+        </div>
+        <button id="retirerBlacklistBtn" type="button">Retirer de la Blacklist</button>
+    </form>
+</div>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>
