@@ -1,14 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-bs-theme="light" lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'accueil</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/VentasPro-Login.css">
 </head>
-<body>
-    <h1>Page d'accueil</h1>
-    
-    <button onclick="window.location.href = 'connexion.php';">Connexion</button>
-    <button onclick="window.location.href = 'creer_compte.php';">Créer un compte</button>
+
+<body style="background: linear-gradient(black, white);border-color: var(--bs-body-bg);color: var(--bs-body-bg);">
+    <div id="main" style="background: var(--bs-primary-bg-subtle);">
+        <div class="text-center" id="info">
+            <img id="ventaspro-logo" src="assets/img/Logo_EasyPortal.png" width="200">
+
+            <p class="text-center">Connexion Administrateur</p>
+            <form class="text-start" action="login.php" id="form-login">
+                <div class="mb-3">
+                    <label class="form-label" id="lbl-usuario" for="txt-usuario">Nom d'utilisateur&nbsp;</label>
+                    <input class="form-control" type="text" id="username"></div>
+                <div class="mb-3">
+                    <label class="form-label" id="lbl-password" for="txt-password">Mot de Passe</label>
+                    <input class="form-control" type="password" id="password"></div>
+                    <button class="btn btn-primary" type="submit" style="--bs-primary: #256db4;--bs-primary-rgb: 37,109,180;background: #256db4;">Connexion</button>
+                </div>
+                </form>
+
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+
 </html>
