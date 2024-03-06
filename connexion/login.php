@@ -27,6 +27,7 @@ if ($result->num_rows > 0) {
     // L'utilisateur existe, redirigez-le vers une page de succès ou effectuez d'autres actions nécessaires
     echo "Connexion réussie !";
     header("Location: ../dashboard/dashboard.html");
+    exit;
 } else {
     // L'utilisateur n'existe pas ou les informations d'identification sont incorrectes
     echo "Nom d'utilisateur ou mot de passe incorrect.";
