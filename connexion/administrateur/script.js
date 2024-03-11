@@ -24,8 +24,8 @@ function validateForm() {
         return false; // Empêche la soumission du formulaire
     } else {
         // Adapter l'URL en fonction des identifiants
-        var url = `https://da7249d4-6fb3-41cf-8186-29452ad842a0.mock.pstmn.io/connexion?username=${encodeURIComponent(usernameInput.value)}&password=${encodeURIComponent(passwordInput.value)}`;
-
+        var url = `https://da7249d4-6fb3-41cf-8186-29452ad842a0.mock.pstmn.io/connexion/administrateur?username=${encodeURIComponent(usernameInput.value)}&password=${encodeURIComponent(passwordInput.value)}`;
+   
         // Envoyer la requête à l'URL adaptée avec fetch
         fetch(url)
             .then(response => response.json()) // Convertir la réponse en JSON
