@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
     <link rel="stylesheet" href="assets/css/Multi-step-form.css">
+    <link rel="script" href="assets/js/script.js">
+    
+    
 </head>
 
 <body id="page-top">
@@ -17,109 +20,80 @@
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content" style="background: #a7d4f1;">
                 <nav class="navbar navbar-expand bg-light-subtle shadow mb-4 topbar static-top navbar-light" style="background: #a7d4f1;color: #a7d4f1;">
-                    <div class="container-fluid"><img src="assets/img/LOGO.png" width="145" height="50">
+                    <div class="container-fluid">
+                        <img src="assets/img/LOGO.png" width="145" height="50">
                         <ul class="navbar-nav flex-nowrap ms-auto">
-                            <li class="nav-item dropdown show d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="true" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
+                            <li class="nav-item dropdown show d-sm-none no-arrow">
+                                <a class="dropdown-toggle nav-link" aria-expanded="true" data-bs-toggle="dropdown" href="#">
+                                  
+                                </a>
                                 <div class="dropdown-menu show dropdown-menu-end p-3 animated--grow-in" data-bs-popper="none" aria-labelledby="searchDropdown">
                                     <form class="me-auto navbar-search w-100">
-                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
-                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                        <div class="input-group">
+                                            <input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary py-0" type="button">
+                                                    <i class="fas fa-search">
+                                                    </i>
+                                                </button>
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
                             </li>
                             <li class="nav-item dropdown no-arrow mx-1">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span style="color: rgb(0,163,255);font-weight: bold;background: rgba(167,212,241,0);">Voir les logs</span></a>
-                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
-                                        <h6 class="dropdown-header">alerts center</h6><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="me-3">
-                                                <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 12, 2019</span>
-                                                <p>A new monthly report is ready to download!</p>
-                                            </div>
-                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="me-3">
-                                                <div class="bg-success icon-circle"><i class="fas fa-donate text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 7, 2019</span>
-                                                <p>$290.29 has been deposited into your account!</p>
-                                            </div>
-                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="me-3">
-                                                <div class="bg-warning icon-circle"><i class="fas fa-exclamation-triangle text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 2, 2019</span>
-                                                <p>Spending Alert: We've noticed unusually high spending for your account.</p>
-                                            </div>
-                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                                    </div>
+                                <div class="nav-item dropdown no-arrow">
+                                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" id="logsLink">
+                                        <span style="color: rgb(0,163,255);font-weight: bold;background: rgba(167,212,241,0);">
+                                            Voir les logs
+                                        </span>
+                                    </a>
+                                    <script>
+                                        // Ajouter un écouteur d'événement pour le clic sur le lien
+                                        document.getElementById("logsLink").addEventListener("click", function(event) {
+                                            // Empêcher le comportement de lien par défaut
+                                            event.preventDefault();
+                                            
+                                            // Rediriger vers la page des logs
+                                            window.location.href = "../logs.html";
+                                        });
+                                    </script>
                                 </div>
+                                
+                                
                             </li>
                             <li class="nav-item dropdown no-arrow mx-1">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span style="color: rgb(0,163,255);font-weight: bold;background: rgba(167,212,241,0);">Gestion des utilisateurs</span></a>
-                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in">
-                                        <h6 class="dropdown-header">alerts center</h6><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="me-3">
-                                                <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 12, 2019</span>
-                                                <p>A new monthly report is ready to download!</p>
-                                            </div>
-                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="me-3">
-                                                <div class="bg-success icon-circle"><i class="fas fa-donate text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 7, 2019</span>
-                                                <p>$290.29 has been deposited into your account!</p>
-                                            </div>
-                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="me-3">
-                                                <div class="bg-warning icon-circle"><i class="fas fa-exclamation-triangle text-white"></i></div>
-                                            </div>
-                                            <div><span class="small text-gray-500">December 2, 2019</span>
-                                                <p>Spending Alert: We've noticed unusually high spending for your account.</p>
-                                            </div>
-                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                    <div class="nav-item dropdown no-arrow">
+                                        <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" id="gestionUtilisateurs">
+                                            <span style="color: rgb(0,163,255);font-weight: bold;background: rgba(167,212,241,0);">Gestion des utilisateurs</span>
+                                        </a>
+                                        <script>
+                                            // Redirection vers la page de gestion des utilisateurs lorsque l'utilisateur clique sur le lien
+                                            document.getElementById("gestionUtilisateurs").addEventListener("click", function(event) {
+                                                event.preventDefault(); // Empêcher le comportement de lien par défaut
+                                                window.location.href = "../gestion_utilisateurs.html"; // Rediriger vers la page de gestion des utilisateurs
+                                            });
+                                        </script>
                                     </div>
-                                </div>
+                               
                             </li>
                             <li class="nav-item dropdown no-arrow mx-1">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span><span style="color: rgb(43, 45, 59);">Se déconnecté</span></span></a>
-                                    <div class="dropdown-menu dropdown-menu-end dropdown-list animated--grow-in"><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="dropdown-list-image me-3">
-                                                <div class="bg-success status-indicator"></div>
-                                            </div>
-                                            <div class="fw-bold">
-                                                <div class="text-truncate"><span>Hi there! I am wondering if you can help me with a problem I've been having.</span></div>
-                                                <p class="small text-gray-500 mb-0">Emily Fowler - 58m</p>
-                                            </div>
-                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar2.jpeg">
-                                                <div class="status-indicator"></div>
-                                            </div>
-                                            <div class="fw-bold">
-                                                <div class="text-truncate"><span>I have the photos that you ordered last month!</span></div>
-                                                <p class="small text-gray-500 mb-0">Jae Chun - 1d</p>
-                                            </div>
-                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar3.jpeg">
-                                                <div class="bg-warning status-indicator"></div>
-                                            </div>
-                                            <div class="fw-bold">
-                                                <div class="text-truncate"><span>Last month's report looks great, I am very happy with the progress so far, keep up the good work!</span></div>
-                                                <p class="small text-gray-500 mb-0">Morgan Alvarez - 2d</p>
-                                            </div>
-                                        </a><a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div class="dropdown-list-image me-3"><img class="rounded-circle" src="assets/img/avatars/avatar5.jpeg">
-                                                <div class="bg-success status-indicator"></div>
-                                            </div>
-                                            <div class="fw-bold">
-                                                <div class="text-truncate"><span>Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</span></div>
-                                                <p class="small text-gray-500 mb-0">Chicken the Dog · 2w</p>
-                                            </div>
-                                        </a><a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a></div>
+                                
+                                <div class="nav-item dropdown no-arrow">
+                                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" id="deconnexion">
+                                        <span>
+                                            <span style="color: rgb(43, 45, 59);">Se déconnecter</span>
+                                        </span>
+                                     </a>
                                 </div>
+                            
+                                <script>
+                                    // Redirection vers la page de déconnexion lorsque l'utilisateur clique sur le lien
+                                    document.getElementById("deconnexion").addEventListener("click", function(event) {
+                                        event.preventDefault(); // Empêcher le comportement de lien par défaut
+                                        window.location.href = "../connexion/administrateur/index.html"; // Rediriger vers la page de déconnexion
+                                    });
+                                </script>
                                 <div class="shadow dropdown-list dropdown-menu dropdown-menu-end" aria-labelledby="alertsDropdown"></div>
                             </li>
                             <div class="d-none d-sm-block topbar-divider"></div>
@@ -144,9 +118,11 @@
                                         <div class="text-uppercase text-success fw-bold text-xs mb-1"></div>
                                         <div class="text-dark fw-bold h5 mb-0"></div>
                                     </div>
-                                    <div class="col-lg-2 col-xxl-2" style="margin-right: 25px;padding-right: 0px;padding-left: 0px;margin-left: 0px;">
-                                        <div class="btn-group" role="group"></div><button class="btn btn-primary" type="button" style="margin-right: -1px;padding-bottom: 6px;margin-left: 0px;margin-top: 0px;padding-right: 15px;color: rgb(255,255,255);background: #7ec4ed;">Ouvrir le portail</button>
-                                    </div>
+                                    <div class="btn-group" role="group"></div>
+                                    <button id="ouvrirPortail" class="btn btn-primary" type="button" style="margin-right: -1px;padding-bottom: 6px;margin-left: 20px;margin-top: 0px;padding-right: 15px;color: rgb(255,255,255);background: #7ec4ed;">
+                                        Ouvrir le portail
+                                    </button>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -157,12 +133,18 @@
                                 <div class="card-body" style="padding-bottom:0px;padding-right:0px;padding-left:1px;margin-left:9px;margin-top:-7px;margin-bottom:10px;">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col-xxl-3 me-2" style="margin-bottom:0px;">
-                                            <div class="text-uppercase fw-bold text-success text-xs mb-1"><span style="color: #00a3ff;"><strong>Supprimer une plaque d'immatriculation</strong></span></div>
-                                            <div class="text-uppercase fw-bold text-success text-xs mb-1"></div>
-                                            <div class="fw-bold text-dark h5 mb-0"></div>
+                                            <div class="text-uppercase fw-bold text-success text-xs mb-1">
+                                                <span style="color: #00a3ff;">
+                                                    <strong>Supprimer une plaque d'immatriculation</strong>
+                                                </span>
+                                            </div>
                                         </div>
-                                        <div class="col-xxl-6" style="padding-right:0px;margin-left:-1px;margin-right:-1px;padding-top:0px;padding-bottom:0px;padding-left:1px;"><input type="text" style="padding-top:0px;padding-bottom:0px;padding-right:94px;margin-top:7px;margin-bottom:4px;"></div>
-                                        <div class="col-xxl-4" style="padding-right:17px;padding-top:5px;margin-top:-4px;margin-right:-2px;margin-left:-90px;padding-left:6px;margin-bottom:-1px;padding-bottom:0px;"><button class="btn btn-primary" type="button" style="margin-left: 111px;padding-left: 11px;padding-right: 6px;background: #7ec4ed;">Supprimer</button></div>
+                                        <div class="col-xxl-6" style="padding-right:0px;margin-left:-1px;margin-right:-1px;padding-top:0px;padding-bottom:0px;padding-left:1px;">
+                                            <input id="userInput" type="text" style="padding-top:0px;padding-bottom:0px;padding-right:94px;margin-top:7px;margin-bottom:4px;">
+                                        </div>
+                                        <div class="col-xxl-4" style="padding-right:17px;padding-top:5px;margin-top:-4px;margin-right:-2px;margin-left:-90px;padding-left:6px;margin-bottom:-1px;padding-bottom:0px;">
+                                            <button id="deleteButton" class="btn btn-primary" type="button" style="margin-left: 111px;padding-left: 11px;padding-right: 6px;background: #7ec4ed;">Supprimer</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -171,8 +153,6 @@
                                     <div class="row align-items-center no-gutters">
                                         <div class="col-xxl-3 me-2" style="margin-bottom:0px;">
                                             <div class="text-uppercase fw-bold text-success text-xs mb-1"><span style="color: #00a3ff;"><strong>Ajouter une plaque d'immatriculation</strong></span></div>
-                                            <div class="text-uppercase fw-bold text-success text-xs mb-1"></div>
-                                            <div class="fw-bold text-dark h5 mb-0"></div>
                                         </div>
                                         <div class="col-xxl-6" style="padding-right:0px;margin-left:-1px;margin-right:-1px;padding-top:0px;padding-bottom:0px;padding-left:1px;"><input type="text" style="padding-top:0px;padding-bottom:0px;padding-right:94px;margin-top:7px;margin-bottom:4px;"></div>
                                         <div class="col-xxl-4" style="padding-right:17px;padding-top:5px;margin-top:-4px;margin-right:-2px;margin-left:-90px;padding-left:6px;margin-bottom:-1px;padding-bottom:0px;"><button class="btn btn-primary" type="button" style="margin-left: 111px;padding-left: 11px;padding-right: 6px;background: #7ec4ed;">Ajouter</button></div>
@@ -259,13 +239,19 @@
                                 <div class="card-header d-flex justify-content-between align-items-center"><span style="color: #00a3ff;font-weight: bold;"><strong>Visualiser le flux vidéo</strong></span>
                                     <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" aria-expanded="false" data-bs-toggle="dropdown" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
                                         <div class="dropdown-menu shadow dropdown-menu-end animated--fade-in">
-                                            <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item" href="#">&nbsp;Action</a><a class="dropdown-item" href="#">&nbsp;Another action</a>
-                                            <div class="dropdown-divider"></div><a class="dropdown-item" href="#">&nbsp;Something else here</a>
+                                            <p class="text-center dropdown-header">dropdown header:</p>
+                                            <a class="dropdown-item" href="#">&nbsp;Action</a>
+                                            <a class="dropdown-item" href="#">&nbsp;Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">&nbsp;Something else here</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="card-body" style="margin-right: 0px;padding-right: 35px;padding-bottom: 159px;margin-bottom: 0px;">
-                                    <div><textarea></textarea></div>
+                                    <div>
+                                        <textarea>
+                                        </textarea>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -277,6 +263,7 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Multi-step-form-script.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script src="supprimer.js"></script>
 </body>
 
 </html>
