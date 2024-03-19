@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
     <link rel="stylesheet" href="assets/css/Multi-step-form.css">
-    <link rel="script" href="assets/js/script.js">
+    
     
     
 </head>
@@ -154,8 +154,11 @@
                                         <div class="col-xxl-3 me-2" style="margin-bottom:0px;">
                                             <div class="text-uppercase fw-bold text-success text-xs mb-1"><span style="color: #00a3ff;"><strong>Ajouter une plaque d'immatriculation</strong></span></div>
                                         </div>
-                                        <div class="col-xxl-6" style="padding-right:0px;margin-left:-1px;margin-right:-1px;padding-top:0px;padding-bottom:0px;padding-left:1px;"><input type="text" style="padding-top:0px;padding-bottom:0px;padding-right:94px;margin-top:7px;margin-bottom:4px;"></div>
-                                        <div class="col-xxl-4" style="padding-right:17px;padding-top:5px;margin-top:-4px;margin-right:-2px;margin-left:-90px;padding-left:6px;margin-bottom:-1px;padding-bottom:0px;"><button class="btn btn-primary" type="button" style="margin-left: 111px;padding-left: 11px;padding-right: 6px;background: #7ec4ed;">Ajouter</button></div>
+                                        <div class="col-xxl-6" style="padding-right:0px;margin-left:-1px;margin-right:-1px;padding-top:0px;padding-bottom:0px;padding-left:1px;">
+                                            <input type="text" id="input_ajouter-plaque" style="padding-top:0px;padding-bottom:0px;padding-right:94px;margin-top:7px;margin-bottom:4px;"></div>
+                                        <div class="col-xxl-4" style="padding-right:17px;padding-top:5px;margin-top:-4px;margin-right:-2px;margin-left:-90px;padding-left:6px;margin-bottom:-1px;padding-bottom:0px;">
+                                            <button class="btn btn-primary" type="button" id="bouton_ouvrir" style="margin-left: 111px;padding-left: 11px;padding-right: 6px;background: #7ec4ed;">Ajouter</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -163,12 +166,19 @@
                                 <div class="card-body" style="padding-bottom:0px;padding-right:0px;padding-left:1px;margin-left:9px;margin-top:-7px;margin-bottom:10px;">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col-xxl-3 me-2" style="margin-bottom:0px;">
-                                            <div class="text-uppercase fw-bold text-success text-xs mb-1"><span style="color: #00a3ff;"><strong>bloquer une plaque d'immatriculation</strong></span></div>
+                                            <div class="text-uppercase fw-bold text-success text-xs mb-1">
+                                                <span style="color: #00a3ff;">
+                                                    <strong>bloquer une plaque d'immatriculation</strong>
+                                                </span>
+                                            </div>
                                             <div class="text-uppercase fw-bold text-success text-xs mb-1"></div>
                                             <div class="fw-bold text-dark h5 mb-0"></div>
                                         </div>
-                                        <div class="col-xxl-6" style="padding-right:0px;margin-left:-1px;margin-right:-1px;padding-top:0px;padding-bottom:0px;padding-left:1px;"><input type="text" style="padding-top:0px;padding-bottom:0px;padding-right:94px;margin-top:7px;margin-bottom:4px;"></div>
-                                        <div class="col-xxl-4" style="padding-right:17px;padding-top:5px;margin-top:-4px;margin-right:-2px;margin-left:-90px;padding-left:6px;margin-bottom:-1px;padding-bottom:0px;"><button class="btn btn-primary" type="button" style="margin-left: 111px;padding-left: 11px;padding-right: 6px;background: #7ec4ed;">Bloquer</button></div>
+                                        <div class="col-xxl-6" style="padding-right:0px;margin-left:-1px;margin-right:-1px;padding-top:0px;padding-bottom:0px;padding-left:1px;">
+                                            <input type="text" id="input_bloquer" style="padding-top:0px;padding-bottom:0px;padding-right:94px;margin-top:7px;margin-bottom:4px;"></div>
+                                        <div class="col-xxl-4" style="padding-right:17px;padding-top:5px;margin-top:-4px;margin-right:-2px;margin-left:-90px;padding-left:6px;margin-bottom:-1px;padding-bottom:0px;">
+                                            <button class="btn btn-primary" id="bouton_bloquer" type="button" style="margin-left: 111px;padding-left: 11px;padding-right: 6px;background: #7ec4ed;">Bloquer</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -176,12 +186,20 @@
                                 <div class="card-body" style="padding-bottom:0px;padding-right:0px;padding-left:1px;margin-left:9px;margin-top:-7px;margin-bottom:10px;">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col-xxl-3 me-2" style="margin-bottom:0px;">
-                                            <div class="text-uppercase fw-bold text-success text-xs mb-1"><span style="color: #00a3ff;"><strong>Débloquer une plaque d'immatriculation</strong></span></div>
+                                            <div class="text-uppercase fw-bold text-success text-xs mb-1">
+                                                <span style="color: #00a3ff;">
+                                                    <strong>Débloquer une plaque d'immatriculation</strong>
+                                                </span>
+                                            </div>
                                             <div class="text-uppercase fw-bold text-success text-xs mb-1"></div>
                                             <div class="fw-bold text-dark h5 mb-0"></div>
                                         </div>
-                                        <div class="col-xxl-6" style="padding-right:0px;margin-left:-1px;margin-right:-1px;padding-top:0px;padding-bottom:0px;padding-left:1px;"><input type="text" style="padding-top:0px;padding-bottom:0px;padding-right:94px;margin-top:7px;margin-bottom:4px;"></div>
-                                        <div class="col-xxl-4" style="padding-right:17px;padding-top:5px;margin-top:-4px;margin-right:-2px;margin-left:-90px;padding-left:6px;margin-bottom:-1px;padding-bottom:0px;"><button class="btn btn-primary" type="button" style="margin-left: 111px;padding-left: 11px;padding-right: 6px;background: #7ec4ed;">Débloquer</button></div>
+                                        <div class="col-xxl-6" style="padding-right:0px;margin-left:-1px;margin-right:-1px;padding-top:0px;padding-bottom:0px;padding-left:1px;">
+                                            <input type="text" id="input_debloquer"style="padding-top:0px;padding-bottom:0px;padding-right:94px;margin-top:7px;margin-bottom:4px;">
+                                        </div>
+                                        <div class="col-xxl-4" style="padding-right:17px;padding-top:5px;margin-top:-4px;margin-right:-2px;margin-left:-90px;padding-left:6px;margin-bottom:-1px;padding-bottom:0px;">
+                                            <button class="btn btn-primary" id="bouton_debloquer" type="button" style="margin-left: 111px;padding-left: 11px;padding-right: 6px;background: #7ec4ed;">Débloquer</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -191,20 +209,26 @@
                                 <div class="card-body" style="padding-bottom:16px;margin-bottom:-4px;">
                                     <div class="row align-items-center no-gutters">
                                         <div class="col-xxl-12 me-2">
-                                            <div class="text-uppercase fw-bold text-info text-xs mb-1"><span style="color: #00a3ff;">création compte administrateur</span></div><span></span>
+                                            <div class="text-uppercase fw-bold text-info text-xs mb-1">
+                                                <span style="color: #00a3ff;">Création compte administrateur</span>
+                                            </div>
                                             <div class="row align-items-center no-gutters">
                                                 <div class="col" style="margin-left:-2px;padding-left:0px;">
-                                                    <form style="padding-left:0px;margin-left:26px;"><input class="form-control" type="text" style="margin-bottom: 10px;padding-bottom: 20px;" value="Prénom"><input class="form-control" type="text" style="margin-bottom: 10px;padding-bottom: 20px;" value="Nom"><input class="form-control" type="text" style="margin-bottom: 10px;padding-bottom: 20px;" value="Nom d'utilisateur"><input class="form-control" type="email" style="margin-bottom: 10px;padding-bottom: 20px;" value="Email"><input class="form-control" type="password" style="margin-bottom: 10px;padding-bottom: 20px;" value="Password">
+                                                    <form id="form_creation_admin" style="padding-left:0px;margin-left:26px;">
+                                                        <input class="form-control" type="text" id="prenom" name="prenom" placeholder="Prénom" style="margin-bottom: 10px;padding-bottom: 20px;">
+                                                        <input class="form-control" type="text" id="nom" name="nom" placeholder="Nom" style="margin-bottom: 10px;padding-bottom: 20px;">
+                                                        <input class="form-control" type="text" id="username" name="username" placeholder="Nom d'utilisateur" style="margin-bottom: 10px;padding-bottom: 20px;">
+                                                        <input class="form-control" type="email" id="email" name="email" placeholder="Email" style="margin-bottom: 10px;padding-bottom: 20px;">
+                                                        <input class="form-control" type="password" id="password" name="password" placeholder="Password" style="margin-bottom: 10px;padding-bottom: 20px;">
                                                         <div class="input-group"></div>
+                                                        <button type="submit" class="btn btn-primary" style="background: #7ec4ed;"><strong>Créer en tant qu'administrateur</strong></button>
                                                     </form>
                                                 </div>
                                             </div>
                                             <div class="input-group"></div>
                                         </div>
                                     </div>
-                                    <div class="row align-items-center no-gutters">
-                                        <div class="col"><a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="#" style="background: #7ec4ed;"><strong>Crée en temps qu'administrateur</strong></a></div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -261,9 +285,13 @@
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
     </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/Multi-step-form-script.js"></script>
     <script src="assets/js/theme.js"></script>
     <script src="supprimer.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="ajouter.js"></script>
+    <script src="bloquer.js"></script>
+    <script src="debloque.js"></script>
+    <script src="login.js"></script>
 </body>
 
 </html>
