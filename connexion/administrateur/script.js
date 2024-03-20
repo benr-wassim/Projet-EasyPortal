@@ -35,11 +35,9 @@ function validateForm() {
                     var found = data.administrateur.some(user => user.username === usernameInput.value && user.password_hash === passwordInput.value);
                     if (found) {
                         // Redirection vers une autre page
-                        //window.location.href = "http://localhost:8888/MAMP/htdocs//BTSSNIR2/informatique/projet/Projet-EasyPortal/dashboard/index.html";
-                        window.location.href = "../../dashboard/index.html";
+                    window.location.href = "../../dashboard/index.html";
                     } else {
-                        alert("Identifiants incorrects");
-                        
+                        alert("Identifiants incorrects");    
                     }
                 } else {
                     alert("Erreur: les données de l'administrateur sont manquantes ou incorrectes");
