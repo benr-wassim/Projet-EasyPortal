@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logs de Connexion</title>
+    <!-- Link vers Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Logs de Connexion</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <table id="logTable" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Utilisateur</th>
+                            <th scope="col">Plaque</th>
+                            <th scope="col">Date de Connexion</th>
+                            <th scope="col">Heure de Connexion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Les données seront ajoutées ici dynamiquement -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link vers Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script JavaScript pour récupérer et afficher les données -->
+    <script>
+        // Fonction pour récupérer les données JSON depuis l'API
+        fetch('https://da7249d4-6fb3-41cf-8186-29452ad842a0.mock.pstmn.io/Dashboard/logs')
+            .then(response => response.json())
+            .then(data => {
+                // Sélectionner le corps du tableau
+                const tbody = document.querySelector('#logTable tbody');
+
+                // Parcourir les données et les ajouter au tableau
+                data.forEach((log, index) => {
+                    // Créer une nouvelle ligne de tableau
+                    const row = document.createElement('tr');
+                    
+                    // Ajouter les cellules de données à la ligne
+                    row.innerHTML = `
+                        <th scope="row">${index + 1}</th>
+                        <td>${log.username}</td>
+                        <td>${log.plaque}</td>
+                        <td>${log.date_connexion}</td>
+                        <td>${log.heure_connexion}</td>
+                    `;
+
+                    // Ajouter la ligne au corps du tableau
+                    tbody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Erreur lors de la récupération des données:', error));
+    </script>
+</body>
+</html>

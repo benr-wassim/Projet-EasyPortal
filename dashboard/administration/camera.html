@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connexion SSH à la Raspberry Pi</title>
+<script src="https://unpkg.com/ssh2"></script>
+</head>
+<body>
+<h1><button onclick="connectSSH()">Se connecter à la Raspberry Pi</button> </h1>
+
+<script>
+function connectSSH() {
+  // Adresse IP de la Raspberry Pi
+  var ipAddress = "172.16.15.67";
+  
+  // Nom d'utilisateur et mot de passe pour SSH
+  var username = "pi";
+  var password = "1234";
+
+  // Création de l'objet SSH
+  var ssh = new SSH({
+    host: ipAddress,
+    user: username,
+    pass: password
+  });
+
+  // Exécuter une commande SSH (par exemple, lister les fichiers dans le répertoire home)
+  ssh.exec('ls ~', function(stdout) {
+    alert('Résultat de la commande : ' + stdout);
+  });
+}
+</script>
+
+<!-- Inclure le script SSH.js -->
+
+
+</body>
+</html>

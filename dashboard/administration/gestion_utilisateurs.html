@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Utilisateurs</title>
+    <!-- Link vers Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Gestion des Utilisateurs</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form id="formUtilisateur">
+                    <div class="mb-3">
+                        <label for="nomUtilisateur" class="form-label">Utilisateurs</label>
+                        <select id="listeUtilisateurs" class="form-select">
+                            <!-- Option par défaut -->
+                            <option value="">Choix de l'utilisateur</option>
+                            <!-- Les utilisateurs seront ajoutés ici dynamiquement -->
+                        </select>                          
+                    </div>
+                    <div class="mb-3">
+                        <label for="typeUtilisateur" class="form-label">Type d'Utilisateur</label>
+                        <select class="form-select" id="typeUtilisateur">
+                            <option value="total">Utilisateur Total</option>
+                            <option value="restreint">Utilisateur Restreint</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Changer le rôle </button>
+                </form>
+            
+            </div>
+        </div>
+    </div>
+
+    <!-- Link vers Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script JavaScript pour gérer l'ajout d'utilisateurs -->
+    <script>
+        // Fonction pour récupérer les données JSON depuis l'API et les afficher
+        function afficherUtilisateurs() {
+            fetch('https://da7249d4-6fb3-41cf-8186-29452ad842a0.mock.pstmn.io/Dashboard/GestionUser/liste_user')
+                .then(response => response.json())
+                .then(data => {
+                    // Sélectionner la liste des utilisateurs
+                    const listeUtilisateurs = document.getElementById("listeUtilisateurs");
+                    
+                    // Parcourir les données et les ajouter à la liste
+                    data.forEach(utilisateur => {
+                        const nouvelUtilisateur = document.createElement("option");
+                        nouvelUtilisateur.textContent = utilisateur.username;
+                        listeUtilisateurs.appendChild(nouvelUtilisateur);
+                    });
+                })
+                .catch(error => console.error('Erreur lors de la récupération des données:', error));
+        }
+
+        // Appeler la fonction pour afficher les utilisateurs lorsque la page est chargée
+        afficherUtilisateurs();
+
+        // Ajouter un écouteur d'événement pour soumettre le formulaire
+        document.getElementById("formUtilisateur").addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêcher la soumission du formulaire
+            // Récupérer les valeurs saisies par l'utilisateur
+            const utilisateurSelectionne = document.getElementById("listeUtilisateurs").value;
+            const typeUtilisateur = document.getElementById("typeUtilisateur").value;
+            
+            // Créer l'objet de données à envoyer
+            const data = {
+                utilisateur: utilisateurSelectionne,
+                role: typeUtilisateur
+            };
+            
+            // Envoyer la requête POST vers l'API
+            fetch('https://da7249d4-6fb3-41cf-8186-29452ad842a0.mock.pstmn.io/Dashboard/GestionUser/role_user', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur HTTP ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert("l'utilisateur a bien été changer");
+            })
+            .catch(error => {
+                console.error('Erreur lors de l\'envoi de la requête POST:', error);
+            });
+        });
+    </script>
+</body>
+</html>
